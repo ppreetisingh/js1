@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Assignment</title>
+	<script type="text/javascript">
+		
+		function calcCircleArea()
+		{
+			var r=prompt("Enter the radius");
+			if(r>=0)
+			{
+				console.log(3.14*r*r);
+				alert("The area is :"+3.14*r*r);
+			}
+			else
+			{
+				alert("Invalid Input");
+			}
+		}
+		function showdate()
+		{
+			date=new Date();
+			var min=date.getMinutes();
+			if(min<10)
+			{
+				min='0'+min;
+			}
+			console.log(date.getHours()+":"+min);
+		}
+		function myFunction()
+		{
+			document.getElementById('myP').innerHTML="Hello!!!";
+		}
+
+		var array=[33,5,12,4,6,34,2,89,12,22];
+		function calcmin()
+		{
+			var min=array['0'];
+			for(var i=0;i<array.length;i++)
+			{
+				if(min>array[i])
+					min=array[i];
+			}
+			console.log(min);
+			alert(min);
+		}
+
+		function calcmax()
+		{
+			var max=array[0];
+			for(var i=0;i<array.length;i++)
+			{
+				if(max<array[i])
+					max=array[i];
+			}
+			console.log(max);
+
+			alert(max);
+		}
+		function iterate()
+		{
+			 var elem=document.getElementById('ip');
+			for(var i=1;i<=100;i++)
+			{
+				if(i%3==0 && i%5==0)
+				{
+					console.log("FizzBuzz");
+					elem.innerHTML+="FizzBuzz<br>";
+				}
+				else if(i%3==0)
+				{
+					console.log("Fizz");
+					elem.innerHTML+="Fizz<br>";
+				}
+				else if(i%5==0)
+				{
+					console.log("Buzz");
+					elem.innerHTML+="Buzz<br>";
+				}
+				else
+				{
+					console.log(i);
+					elem.innerHTML+=i+"<br>";
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="myFunction()">
+	<form action="" onsubmit="calcCircleArea();" method="post">
+		<input type="submit" value="Calculate Area"/>	
+	</form><br>
+	<button onclick="showdate();">Show Date</button>
+	<p id="myP"></p>
+	<p>The array is 33,5,12,4,6,34,2,89,12,22</p>
+	<button onclick="calcmin();">Calculate Min</button>
+	<br><br>
+	<button onclick="calcmax();">Calculate Max</button>
+	<br><br>
+	<button onclick="iterate();">Iterate from 1-100</button>
+	<p id="ip"></p>
+</body>
+</html>
